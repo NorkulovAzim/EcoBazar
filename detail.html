@@ -135,9 +135,9 @@
 
             <div class="cart-controls">
               <div class="quantity">
-                <button>-</button>
-                <input type="text" value="5" />
-                <button>+</button>
+                <button class="minus">-</button>
+                <input type="text" value="1" />
+                <button class="plus">+</button>
               </div>
               <button class="add-to-cart">Add to Cart</button>
               <button class="wishlist">
@@ -445,5 +445,24 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      document.querySelectorAll(".quantity").forEach(function (quantity) {
+        const input = quantity.querySelector("input");
+        const minus = quantity.querySelector(".minus");
+        const plus = quantity.querySelector(".plus");
+
+        plus.addEventListener("click", () => {
+          input.value = parseInt(input.value) + 1;
+        });
+
+        minus.addEventListener("click", () => {
+          let value = parseInt(input.value);
+          if (value > 1) {
+            input.value = value - 1;
+          }
+        });
+      });
+    </script>
   </body>
 </html>
