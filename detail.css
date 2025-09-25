@@ -1267,6 +1267,12 @@ header {
     font-size: 14px;
     padding: 8px 16px;
   }
+
+  .sub-text h2,
+  p {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 300px) {
